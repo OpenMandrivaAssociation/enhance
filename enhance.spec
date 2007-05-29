@@ -1,6 +1,6 @@
 %define name enhance
 %define version 0.0.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 1
 %define libname %mklibname %{name} %major
