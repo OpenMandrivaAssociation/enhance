@@ -1,8 +1,8 @@
 %define name enhance
 %define version 0.0.1
-%define release %mkrel 3
+%define release %mkrel 4
 
-%define major 1
+%define major 0
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
@@ -10,13 +10,14 @@ Summary:	Enhance is a library that takes advantage of Glade's
 Name:		%name
 Version:	%version
 Release:	%release
-License: BSD
-Group: System Environment/Libraries
-URL: http://www.enlightenment.org/
-Source: ftp://ftp.enlightenment.org/pub/enhance/%{name}-%{version}.tar.bz2
-BuildRequires: ecore-devel >= 0.9.9.038
-Buildrequires: etk-devel >= 0.1.0.003, exml-devel >= 0.1.1
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
+License: 	BSD
+Group:		System/Libraries
+URL: 		http://www.enlightenment.org/
+Source: 	ftp://ftp.enlightenment.org/pub/enhance/%{name}-%{version}.tar.bz2
+BuildRequires: 	ecore-devel >= 0.9.9.038
+Buildrequires: 	etk-devel >= 0.1.0.003, exml-devel >= 0.1.1
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
+provides: 	%{name}-devel = %version
 
 %description
 Enhance is a library that takes advantage of Glade's .glade XML files, EXML,
@@ -34,24 +35,26 @@ added to Etk, Enhance will be updated to support those new widgets.
 
 
 %package -n %libname
-Summary: %name libraries
+Summary: %{name} libraries
 Group: System Environment/Libraries
+Provides: %{name} = %{version}-%{release}
 
 %description -n %libname
 %name libraries
 
 %package -n %libnamedev
-Summary: %name headers, static libraries, documentation and test programs
+Summary: %{name} headers, static libraries, documentation and test programs
 Group: System Environment/Libraries
 Requires: %libname = %{version}
 Requires: ecore-devel >= 0.9.9.038
+Provides: %{name}-devel = %{version}-%{release}
 
 %description -n %libnamedev
 Headers, static libraries, test programs and documentation for enhance
 
 %prep
 rm -rf $RPM_BUILD_ROOT
-%setup -n %name-%version
+%setup -q
 
 %build
 %configure2_5x
