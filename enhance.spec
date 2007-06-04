@@ -72,11 +72,12 @@ test "x$RPM_BUILD_ROOT" != "x/" && rm -rf $RPM_BUILD_ROOT
 %files -n %libname
 %defattr(-, root, root)
 %doc AUTHORS INSTALL README
-%{_libdir}/*.so*
+%{_libdir}/*.so.%{major}*
 
 %files -n %libnamedev
 %defattr(-, root, root)
 %{_libdir}/*a
 %{_libdir}/pkgconfig/*.pc
 %{_bindir}/%name-config
+%{_libdir}/*.so
 %{_includedir}/*
