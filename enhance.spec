@@ -1,6 +1,6 @@
 %define name enhance
 %define version 0.0.1
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -36,7 +36,7 @@ added to Etk, Enhance will be updated to support those new widgets.
 
 %package -n %libname
 Summary: %{name} libraries
-Group: System Environment/Libraries
+Group:		System/Libraries
 Provides: %{name} = %{version}-%{release}
 
 %description -n %libname
@@ -44,7 +44,7 @@ Provides: %{name} = %{version}-%{release}
 
 %package -n %libnamedev
 Summary: %{name} headers, static libraries, documentation and test programs
-Group: System Environment/Libraries
+Group:		System/Libraries
 Requires: %libname = %{version}
 Requires: ecore-devel >= 0.9.9.038
 Provides: %{name}-devel = %{version}-%{release}
