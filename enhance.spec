@@ -6,7 +6,7 @@
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
-Summary:	Enhance is a library that takes advantage of Glade's
+Summary:	Library that takes advantage of Glade's
 Name:		%name
 Version:	%version
 Release:	%release
