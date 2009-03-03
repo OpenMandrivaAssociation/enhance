@@ -1,6 +1,6 @@
 %define name enhance
-%define version 0.1.1
-%define release %mkrel 5
+%define version 0.0.1
+%define release %mkrel 2
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -9,6 +9,7 @@
 Summary:	Library that takes advantage of Glade's
 Name:		%name
 Version:	%version
+Epoch:		1
 Release:	%release
 License: 	BSD
 Group:		System/Libraries
@@ -18,6 +19,7 @@ BuildRequires: 	ecore-devel >= 0.9.9.050
 Buildrequires: 	etk-devel >= 0.1.0.042, exml-devel >= 0.1.1
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
 provides: 	%{name}-devel = %version
+provides: 	%{name}-devel = %epoch:%version
 
 %description
 Enhance is a library that takes advantage of Glade's .glade XML files, EXML,
@@ -46,7 +48,7 @@ Provides: %{name} = %{version}-%{release}
 Summary: %{name} headers, static libraries, documentation and test programs
 Group:		System/Libraries
 Requires: %libname = %{version}
-Requires: ecore-devel >= 0.9.9.038
+Requires: ecore-devel >= 0.9.9.050
 Provides: %{name}-devel = %{version}-%{release}
 
 %description -n %libnamedev
