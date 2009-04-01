@@ -1,6 +1,6 @@
 %define name enhance
 %define version 0.0.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -47,7 +47,7 @@ Provides: %{name} = %{version}-%{release}
 %package -n %libnamedev
 Summary: %{name} headers, static libraries, documentation and test programs
 Group:		System/Libraries
-Requires: %libname = %{version}
+Requires: %libname = %{epoch}:%{version}-%{release}
 Requires: ecore-devel >= 0.9.9.050
 Provides: %{name}-devel = %{version}-%{release}
 
