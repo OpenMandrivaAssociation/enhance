@@ -13,7 +13,7 @@ Epoch:		1
 Release:	%release
 License: 	BSD
 Group:		System/Libraries
-URL: 		http://www.enlightenment.org/
+URL: 		https://www.enlightenment.org/
 Source: 	ftp://ftp.enlightenment.org/pub/enhance/%{name}-%{version}.tar.bz2
 BuildRequires: 	ecore-devel >= 0.9.9.050
 Buildrequires: 	etk-devel >= 0.1.0.042, exml-devel >= 0.1.1
