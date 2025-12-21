@@ -15,6 +15,11 @@ License: 	BSD
 Group:		System/Libraries
 URL: 		https://www.enlightenment.org/
 Source: 	ftp://ftp.enlightenment.org/pub/enhance/%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: 	ecore-devel >= 0.9.9.050
 Buildrequires: 	etk-devel >= 0.1.0.042, exml-devel >= 0.1.1
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-root
